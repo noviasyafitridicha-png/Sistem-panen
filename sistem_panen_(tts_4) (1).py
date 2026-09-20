@@ -14,3 +14,27 @@ def hitung_total_panen(panen_pagi, panen_sore):
 if __name__ == "__main__":
     total = hitung_total_panen(150, 77)
     print(f"Total Hasil Panen: {total} kg")
+
+if __name__ == "__main__":
+    total = hitung_total_panen(150, 77)
+    print(f"Total Hasil Panen: {total} kg")
+
+def hitung_diskon_maksimal(harga_awal, persentase_diskon, maks_potongan):
+    potongan = harga_awal * (persentase_diskon / 100)
+
+    # Batasi nilai potongan jika melebihi batas maksimal
+    if potongan > maks_potongan:
+        potongan = maks_potongan
+
+    harga_akhir = harga_awal - potongan
+    return harga_akhir, potongan
+
+# Contoh penggunaan (angka disesuaikan):
+harga_barang = 150000
+diskon_persen = 77
+maksimal_potongan = 50000  # Dapat disesuaikan sesuai kebutuhan batas maksimal potongan
+
+harga_bayar, potongan_dapat = hitung_diskon_maksimal(harga_barang, diskon_persen, maksimal_potongan)
+print(f"Harga Barang: Rp{harga_barang:,}")
+print(f"Potongan Didapat: Rp{potongan_dapat:,}")
+print(f"Total Bayar: Rp{harga_bayar:,}")
